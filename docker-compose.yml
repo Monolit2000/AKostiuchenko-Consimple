@@ -1,0 +1,35 @@
+services:
+  digitalstore.api:
+    image: ${DOCKER_REGISTRY-}digitalstoreapi
+    build:
+      context: .
+      dockerfile: src/DigitalStore.API/Dockerfile
+    environment:
+      ConnectionStrings__DefaultConnection: Host=postgresdb;Port=5432;Database=DigitalStore;Username=postgres;Password=postgres
+    ports:
+      - 5000:5000
+    depends_on:
+      - postgresdb
+    networks:
+      - default
+    restart: always
+
+
+  postgresdb:
+    image: postgres:latest
+    container_name: postgres.db
+    environment:
+      POSTGRES_DB: DigitalStore
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - default
+    restart: always
+
+    
+volumes:
+  postgres_data:  
