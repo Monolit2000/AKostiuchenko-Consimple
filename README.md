@@ -80,8 +80,15 @@ DigitalStore.API/
    ```bash
    git clone <repository-url>
    ```
+   
+2. Navigate to the project directory:
+ 
+   ```bash
+   cd AKostiuchenko-Consimple
+   ```
 
-2. Build and Run with Docker Compose
+
+3. Build and Run with Docker Compose
    ```bash
    docker-compose up 
    ```
