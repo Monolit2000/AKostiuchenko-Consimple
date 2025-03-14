@@ -53,7 +53,7 @@ DigitalStore.API/
 
 ## Features
 
-### 1. **Client Birthday Management**
+### 1. **Client Management**
 
 * **Get Birthday List**: Retrieves a list of clients whose birthday matches the specified date (day and month only).
   - **Endpoint**: `GET /api/GetBirthdays/client/getBirthdaysList/?date={date}`
